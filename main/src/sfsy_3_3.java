@@ -34,10 +34,8 @@ public class sfsy_3_3 {
             }
 
             for (int i = 0; i < n; i++) {
-                // 记录对角线元素，作为除数
                 double temp = Mat[i][k];
                 for (int j = 0; j < n + 1; j++) {
-                    // i<k时,i行已经计算完成
                     if (i < k)
                         break;
                     if (temp == 0)
@@ -54,12 +52,10 @@ public class sfsy_3_3 {
 
     }
     private static double[] solving(double[][] coeMat) {
-        // 有解时方程组的个数等于方程组的未知数
         double[] resMat = new double[coeMat.length];
         for (int i = coeMat.length - 1; i > -1; i--) {
             double temp = 0;
             for (int j = coeMat[i].length; j > 0; j--) {
-                // 第一个为方程的解，需要将解赋值给临时变量
                 if (coeMat[i][j - 1] != 0) {
                     if (j == coeMat[i].length) {
                         temp = coeMat[i][j - 1];
